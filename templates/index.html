@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask</title>
+    <link rel="stylesheet" href="static/w3.css">
+</head>
+<body class="w3-container">
+    <h1 class="w3-sans-serif">Список продуктов</h1>
+    <form class="w3-container" method="POST">
+        <label class="w3-sans-serif">Название</label>
+        <input class="w3-input"  type="text" name="nazvanie">
+        <label class="w3-sans-serif">Цена</label>
+        <input class="w3-input" type="number" name="price">
+        <input class="w3-input" type="submit" value="Добавить">
+    </form>
+    <p>список тут.</p>
+    <p>Название: {{user_new_name}}, цена: {{user_new_price}}</p>
+
+</body>
+</html>
