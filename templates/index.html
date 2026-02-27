@@ -5,13 +5,16 @@
     <link rel="stylesheet" href="static/w3.css">
 </head>
 <body class="w3-container">
-    <h1 class="w3-sans-serif">Угадай число</h1>
-    <form class="w3-container" method="POST">
-        <label class="w3-sans-serif">Введи число</label>
-        <input class="w3-input" type="number" name="num" value={{old_value}}>
-        <input class="w3-input" type="submit" value="Угадать">
+    <p>Список продуктов</p>
+    <form method="POST">
+        <input class="w3-input" type="text" name="user_input" placeholder="Ввести сюда">
+        <input class="w3-input" type="submit" value="ТЫК!!!">
     </form>
-    <p>Ответ тут {{ans}}</p>
-
+    <p class="w3-blue">Список:</p>
+    <ul>
+        {% for item in my_list %}
+        <li>{{item}}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
