@@ -11,11 +11,16 @@
         <input class="w3-input" type="number" name="price">
         <input class="w3-input" type="submit" value="ТЫК!!!">
     </form>
+    <p class="w3-red">{{info}}</p>
     <p class="w3-blue">Список:</p>
-    <ul>
-        {% for item in my_list %}
-        <li>{{item}}</li>
-        {% endfor %}
-    </ul>
+    <form method="GET">
+        <ul class="w3-ul">
+            {% for item in my_list %}
+            <li class="w3-padding-large">{{item}}<button value="удалить" name={{btn_id[loop.index0]}} class="w3-button w3-left w3-tiny w3-white w3-border w3-border-red w3-round-large">DEL</button></li>
+            {% endfor %}
+        </ul>
+    </form>
+    <h4>ИТОГО:</h4>
+    <p>{{sum}} руб.</p>
 </body>
 </html>
