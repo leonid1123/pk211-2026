@@ -41,5 +41,13 @@ def main_page():
     return render_template('index.html', msg=msg)
 
 
+@app.route("/show", methods=['POST', 'GET'])
+def show_all():
+    sql = 'SELECT * FROM t_shirt'
+    cur.execute(sql)
+    ans = cur.fetchall()
+    return render_template('main_page.html',all_list=ans)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

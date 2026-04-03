@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Основное окно</title>
+    <title>Список футболок</title>
+    <link rel="stylesheet" href="static/w3.css">
 </head>
-<body>
-    <h3>{{info}}</h3>
+<body class="w3-container">
+<div class="w3-bar w3-gray">
+  <a href="/" class="w3-bar-item w3-button w3-mobile">Добавить</a>
+  <a href="/show" class="w3-bar-item w3-button w3-mobile">Просмотреть</a>
+</div>
+{% for item in all_list %}
+<p>Футболка</p>
+<p>Размер: {{item['size']}}</p>
+<p>Цвет: {{item['color']}}</p>
+<p>Материал: {{item['material']}} </p>
+<img src="static/ing/{{item['img']}}" width="100px">
+{% endfor %}
 </body>
 </html>
