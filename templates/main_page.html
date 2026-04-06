@@ -7,15 +7,19 @@
 </head>
 <body class="w3-container">
 <div class="w3-bar w3-gray">
-  <a href="/" class="w3-bar-item w3-button w3-mobile">Добавить</a>
-  <a href="/show" class="w3-bar-item w3-button w3-mobile">Просмотреть</a>
+    <a href="/" class="w3-bar-item w3-button w3-mobile">Добавить</a>
+    <a href="/show" class="w3-bar-item w3-button w3-mobile">Просмотреть</a>
+    <form method="post">
+        <input name="sort_up" class="w3-bar-item" type="submit" value="По возрастанию">
+        <input name="sort_down" class="w3-bar-item" type="submit" value="По убыванию">
+    </form>
 </div>
 {% for item in all_list %}
-<p>Футболка</p>
-<p>Размер: {{item['size']}}</p>
-<p>Цвет: {{item['color']}}</p>
-<p>Материал: {{item['material']}} </p>
-<img src="static/ing/{{item['img']}}" width="100px">
+    <p>Футболка</p>
+    <p>Размер: {{item['size']}}</p>
+    <p>Цвет: {{item['color']}}</p>
+    <p>Материал: {{item['material']}} </p>
+    <img src="static/ing/{{item['img']}}" width="100px">
 {% endfor %}
 </body>
 </html>

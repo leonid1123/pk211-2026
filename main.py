@@ -44,6 +44,12 @@ def main_page():
 @app.route("/show", methods=['POST', 'GET'])
 def show_all():
     sql = 'SELECT * FROM t_shirt'
+    if request.method == "POST":
+        if 'sort_up' in request.form:
+            sql = 'SELECT * FROM t_shirt ORDER BY size ASC'
+        if 'sort_down' in request.form:
+            sql = 'SELECT * FROM t_shirt ORDER BY size DESC'
+
     cur.execute(sql)
     ans = cur.fetchall()
     return render_template('main_page.html',all_list=ans)
