@@ -10,8 +10,24 @@
     <a href="/" class="w3-bar-item w3-button w3-mobile">Добавить</a>
     <a href="/show" class="w3-bar-item w3-button w3-mobile">Просмотреть</a>
     <form method="post">
-        <input name="sort_up" class="w3-bar-item" type="submit" value="По возрастанию">
-        <input name="sort_down" class="w3-bar-item" type="submit" value="По убыванию">
+        <input name="sort_up" class="w3-bar-item w3-button"
+               type="submit" value="По возрастанию">
+        <input name="sort_down" class="w3-bar-item w3-button"
+               type="submit" value="По убыванию">
+        <select name='filter' class="w3-bar-item w3-button">
+            {% for item in ans_filter %}
+            <option value="{{item['color']}}">{{item['color']}}</option>
+            {% endfor %}
+        </select>
+        <input class="w3-bar-item"
+               type="submit" name="s_filter"
+               value="Фильтр">
+        <input class="w3-bar-item w3-border w3-border-gray"
+               type="search"
+               name="search">
+        <input class="w3-bar-item"
+               type="submit" name="search"
+               value="Поиск">
     </form>
 </div>
 {% for item in all_list %}
